@@ -1,0 +1,11 @@
+<%
+locals.OLSKPageAssets = [
+	'main.js',
+];
+%>
+
+<div class="OLSKBannerTarget"></div>
+
+<script type="text/javascript">
+	OLSKBanner.OLSKBannerLoad(<%- JSON.stringify(OLSKBannerStubItem) %>);
+</script>

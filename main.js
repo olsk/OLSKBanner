@@ -45,10 +45,21 @@ const mod = {
 		return 'XXXXX';
 	},
 
+	OLSKBannerLoad (inputData) {
+		document.querySelector('.OLSKBannerTarget').innerHTML = `<div class="OLSKBanner OLSKDecor">
+		<span class="OLSKBannerBlurb">${ inputData.OLSKBannerBlurbHTML }</span>
+		<a class="OLSKBannerButton OLSKDecorPress OLSKDecorPressCall" href="${ inputData.OLSKBannerButtonLink }">${ inputData.OLSKBannerButtonText }</a>
+	</div>`;
+	},
+
 	// MESSAGE
 
 	async DOMContentLoaded () {
-		const _mod = process.env.npm_lifecycle_script === 'olsk-spec' ? this : mod;
+		const _mod = (typeof process !== 'undefined' && process.env.npm_lifecycle_script === 'olsk-spec') ? this : mod;
+
+		if (typeof window === 'object' && window.origin.match('loc.tests')) {
+			return;
+		}
 
 		_mod.OLSKBannerLoad(await _mod.OLSKBannerObject())
 	},
@@ -61,10 +72,12 @@ const mod = {
 
 };
 
-if (process.env.npm_lifecycle_script === 'olsk-spec') {
+if (typeof process !== 'undefined' && process.env.npm_lifecycle_script === 'olsk-spec') {
 	Object.assign(exports, mod);
 }
 
 if (typeof window === 'object') {
+	window.OLSKBanner = mod;
+
 	mod.LifecycleModuleDidLoad();
 }

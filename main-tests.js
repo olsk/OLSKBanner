@@ -2,14 +2,6 @@ const { throws, deepEqual } = require('assert');
 
 const mod = require('./main.js');
 
-const uItem = function (inputData = {}) {
-	return Object.assign({
-		OLSKBannerBlurbHTML: Math.random().toString(),
-		OLSKBannerButtonText: Math.random().toString(),
-		OLSKBannerButtonLink: Math.random().toString(),
-	}, inputData);
-};
-
 describe('OLSKBannerObject', function test_OLSKBannerObject() {
 
 	const _OLSKBannerObject = function (inputData = {}) {
