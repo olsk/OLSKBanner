@@ -45,8 +45,22 @@ const mod = {
 		return 'XXXXX';
 	},
 
+	// MESSAGE
+
+	DOMContentLoaded () {},
+
+	// LIFECYCLE
+
+	LifecycleModuleDidLoad (debug) {
+		(debug || window).document.addEventListener('DOMContentLoaded', mod.DOMContentLoaded);
+	},
+
 };
 
 if (process.env.npm_lifecycle_script === 'olsk-spec') {
 	Object.assign(exports, mod);
+}
+
+if (typeof window === 'object') {
+	mod.LifecycleModuleDidLoad();
 }

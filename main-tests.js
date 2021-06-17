@@ -103,3 +103,17 @@ describe('OLSKBannerEndpointURL', function test_OLSKBannerEndpointURL () {
 	});
 
 });
+
+describe('LifecycleModuleDidLoad', function test_LifecycleModuleDidLoad() {
+
+	it('listens for DOMContentLoaded', function () {
+		deepEqual(uCapture(function (addEventListener) {
+			mod.LifecycleModuleDidLoad({
+				document: {
+					addEventListener,
+				},
+			});
+		}), ['DOMContentLoaded', mod.DOMContentLoaded]);
+	});
+
+});
