@@ -1,83 +1,93 @@
-const mod = {
+(function(global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+		typeof define === 'function' && define.amd ? define(['exports'], factory) :
+			(factory((global.OLSKBanner = global.OLSKBanner || {})));
+}(this, (function(exports) { 'use strict';
 
-	async OLSKBannerObject (debug) {
-		const response = await (debug || window).fetch(mod.OLSKBannerEndpointURL(), {
-			method: 'GET',
-		});
+	const mod = {
 
-		try {
-			const outputData = await response.json();
-			
-			if (mod.OLSKBannerIsValid(outputData)) {
-				return outputData;
+		async OLSKBannerObject (debug) {
+			const response = await (debug || window).fetch(mod.OLSKBannerEndpointURL(), {
+				method: 'GET',
+			});
+
+			try {
+				const outputData = await response.json();
+				
+				if (mod.OLSKBannerIsValid(outputData)) {
+					return outputData;
+				}
+
+				throw new Error('ErrorInputNotValid');
+			} catch {
+				return null;
+			}
+		},
+
+		OLSKBannerIsValid (inputData) {
+			if (typeof inputData !== 'object' || inputData === null) {
+				throw new Error('OLSKErrorInputNotValid');
 			}
 
-			throw new Error('ErrorInputNotValid');
-		} catch {
-			return null;
-		}
-	},
+			if (typeof inputData.OLSKBannerBlurbHTML !== 'string') {
+				return false;
+			}
 
-	OLSKBannerIsValid (inputData) {
-		if (typeof inputData !== 'object' || inputData === null) {
-			throw new Error('OLSKErrorInputNotValid');
-		}
+			if (typeof inputData.OLSKBannerButtonText !== 'string') {
+				return false;
+			}
 
-		if (typeof inputData.OLSKBannerBlurbHTML !== 'string') {
-			return false;
-		}
+			if (typeof inputData.OLSKBannerButtonLink !== 'string') {
+				return false;
+			}
 
-		if (typeof inputData.OLSKBannerButtonText !== 'string') {
-			return false;
-		}
+			return true;
+		},
 
-		if (typeof inputData.OLSKBannerButtonLink !== 'string') {
-			return false;
-		}
+		OLSKBannerEndpointURL () {
+			return 'https://rosano.ca/api/banner';
+		},
 
-		return true;
-	},
+		OLSKBannerLoad (inputData) {
+			const target = document.createElement('div');
+			document.body.appendChild(target);
+			target.innerHTML = `<div class="OLSKBanner OLSKDecor">
+			<span class="OLSKBannerBlurb">${ inputData.OLSKBannerBlurbHTML }</span>
+			<a class="OLSKBannerButton OLSKDecorPress OLSKDecorPressCall" href="${ inputData.OLSKBannerButtonLink }">${ inputData.OLSKBannerButtonText }</a>
+		</div>`;
+			document.body.style.paddingBottom = document.querySelector('.OLSKBanner').getBoundingClientRect().height + 'px'
+		},
 
-	OLSKBannerEndpointURL () {
-		return 'https://rosano.ca/api/banner';
-	},
+		// MESSAGE
 
-	OLSKBannerLoad (inputData) {
-		const target = document.createElement('div');
-		document.body.appendChild(target);
-		target.innerHTML = `<div class="OLSKBanner OLSKDecor">
-		<span class="OLSKBannerBlurb">${ inputData.OLSKBannerBlurbHTML }</span>
-		<a class="OLSKBannerButton OLSKDecorPress OLSKDecorPressCall" href="${ inputData.OLSKBannerButtonLink }">${ inputData.OLSKBannerButtonText }</a>
-	</div>`;
-		document.body.style.paddingBottom = document.querySelector('.OLSKBanner').getBoundingClientRect().height + 'px'
-	},
+		async DOMContentLoaded () {
+			const _mod = (typeof process !== 'undefined' && process.env.npm_lifecycle_script === 'olsk-spec') ? this : mod;
 
-	// MESSAGE
+			if (typeof window === 'object' && window.origin.match('loc.tests')) {
+				return;
+			}
 
-	async DOMContentLoaded () {
-		const _mod = (typeof process !== 'undefined' && process.env.npm_lifecycle_script === 'olsk-spec') ? this : mod;
+			_mod.OLSKBannerLoad(await _mod.OLSKBannerObject());
+		},
 
-		if (typeof window === 'object' && window.origin.match('loc.tests')) {
-			return;
-		}
+		// LIFECYCLE
 
-		_mod.OLSKBannerLoad(await _mod.OLSKBannerObject());
-	},
+		LifecycleModuleDidLoad (debug) {
+			(debug || window).document.addEventListener('DOMContentLoaded', mod.DOMContentLoaded);
+		},
 
-	// LIFECYCLE
+	};
 
-	LifecycleModuleDidLoad (debug) {
-		(debug || window).document.addEventListener('DOMContentLoaded', mod.DOMContentLoaded);
-	},
+	if (typeof process !== 'undefined' && process.env.npm_lifecycle_script === 'olsk-spec') {
+		Object.assign(exports, mod);
+	}
 
-};
+	if (typeof window === 'object') {
+		mod.LifecycleModuleDidLoad();
+	}
 
-if (typeof process !== 'undefined' && process.env.npm_lifecycle_script === 'olsk-spec') {
-	Object.assign(exports, mod);
-}
+	Object.defineProperty(exports, '__esModule', {
+		value: true
+	});
 
-if (typeof window === 'object') {
-	window.OLSKBanner = mod;
-
-	mod.LifecycleModuleDidLoad();
-}
+})));
