@@ -3,9 +3,6 @@ const mod = {
 	async OLSKBannerObject (debug) {
 		const response = await (debug || window).fetch(mod.OLSKBannerEndpointURL(), {
 			method: 'GET',
-			headers: {
-				'Content-Type': 'application/json',
-			},
 		});
 
 		try {
@@ -42,14 +39,17 @@ const mod = {
 	},
 
 	OLSKBannerEndpointURL () {
-		return 'XXXXX';
+		return 'https://rosano.ca/api/banner';
 	},
 
 	OLSKBannerLoad (inputData) {
-		document.querySelector('.OLSKBannerTarget').innerHTML = `<div class="OLSKBanner OLSKDecor">
+		const target = document.createElement('div');
+		document.body.appendChild(target);
+		target.innerHTML = `<div class="OLSKBanner OLSKDecor">
 		<span class="OLSKBannerBlurb">${ inputData.OLSKBannerBlurbHTML }</span>
 		<a class="OLSKBannerButton OLSKDecorPress OLSKDecorPressCall" href="${ inputData.OLSKBannerButtonLink }">${ inputData.OLSKBannerButtonText }</a>
 	</div>`;
+		document.body.style.paddingBottom = document.querySelector('.OLSKBanner').getBoundingClientRect().height + 'px'
 	},
 
 	// MESSAGE
@@ -61,7 +61,7 @@ const mod = {
 			return;
 		}
 
-		_mod.OLSKBannerLoad(await _mod.OLSKBannerObject())
+		_mod.OLSKBannerLoad(await _mod.OLSKBannerObject());
 	},
 
 	// LIFECYCLE

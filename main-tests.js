@@ -28,9 +28,6 @@ describe('OLSKBannerObject', function test_OLSKBannerObject() {
 			});
 		}), [mod.OLSKBannerEndpointURL(), {
 			method: 'GET',
-			headers: {
-				'Content-Type': 'application/json',
-			},
 		}]);
 	});
 
@@ -91,7 +88,7 @@ describe('OLSKBannerIsValid', function test_OLSKBannerIsValid () {
 describe('OLSKBannerEndpointURL', function test_OLSKBannerEndpointURL () {
 
 	it('returns string', function () {
-		deepEqual(mod.OLSKBannerEndpointURL(), 'XXXXX');
+		deepEqual(mod.OLSKBannerEndpointURL(), 'https://rosano.ca/api/banner');
 	});
 
 });
