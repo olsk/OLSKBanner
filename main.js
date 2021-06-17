@@ -47,7 +47,11 @@ const mod = {
 
 	// MESSAGE
 
-	DOMContentLoaded () {},
+	async DOMContentLoaded () {
+		const _mod = process.env.npm_lifecycle_script === 'olsk-spec' ? this : mod;
+
+		_mod.OLSKBannerLoad(await _mod.OLSKBannerObject())
+	},
 
 	// LIFECYCLE
 

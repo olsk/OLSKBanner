@@ -104,6 +104,28 @@ describe('OLSKBannerEndpointURL', function test_OLSKBannerEndpointURL () {
 
 });
 
+describe('DOMContentLoaded', function test_DOMContentLoaded() {
+
+	const _DOMContentLoaded = function (inputData = {}) {
+		return Object.assign(Object.assign({}, mod), {
+			OLSKBannerLoad: (function () {}),
+		}, inputData).DOMContentLoaded();
+	};
+
+	it('calls OLSKBannerLoad', async function () {
+		const item = Math.random().toString();
+		deepEqual(await uCapture(function (OLSKBannerLoad) {
+			_DOMContentLoaded({
+				async OLSKBannerObject () {
+					return item;
+				},
+				OLSKBannerLoad,
+			});
+		}), [item]);
+	});
+
+});
+
 describe('LifecycleModuleDidLoad', function test_LifecycleModuleDidLoad() {
 
 	it('listens for DOMContentLoaded', function () {
