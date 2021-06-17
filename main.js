@@ -20,6 +20,10 @@ const mod = {
 		return true;
 	},
 
+	OLSKBannerEndpointURL () {
+		return 'XXXXX';
+	},
+
 };
 
 if (process.env.npm_lifecycle_script === 'olsk-spec') {

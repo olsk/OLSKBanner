@@ -41,3 +41,11 @@ describe('OLSKBannerIsValid', function test_OLSKBannerIsValid () {
 	});
 	
 });
+
+describe('OLSKBannerEndpointURL', function test_OLSKBannerEndpointURL () {
+
+	it('returns string', function () {
+		deepEqual(mod.OLSKBannerEndpointURL(), 'XXXXX');
+	});
+	
+});
