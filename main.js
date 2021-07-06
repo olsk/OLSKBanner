@@ -78,9 +78,7 @@
 
 	};
 
-	if (typeof process !== 'undefined' && process.env.npm_lifecycle_script === 'olsk-spec') {
-		Object.assign(exports, mod);
-	}
+	Object.assign(exports, mod);
 
 	if (typeof window === 'object') {
 		mod.LifecycleModuleDidLoad();
