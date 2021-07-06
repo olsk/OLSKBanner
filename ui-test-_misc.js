@@ -14,6 +14,10 @@ describe('OLSKBanner_Misc', function () {
 			browser.assert.hasClass(OLSKBanner, 'OLSKDecor');
 		});
 
+		it('sets lang', function () {
+			browser.assert.attribute(OLSKBanner, 'lang', 'en');
+		});
+
 	});
 
 	describe('OLSKBannerBlurb', function() {

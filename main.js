@@ -53,7 +53,7 @@
 		OLSKBannerLoad (inputData) {
 			const target = document.createElement('div');
 			document.body.appendChild(target);
-			target.innerHTML = `<div class="OLSKBanner OLSKDecor">
+			target.innerHTML = `<div class="OLSKBanner OLSKDecor" lang="en">
 			<span class="OLSKBannerBlurb">${ inputData.OLSKBannerBlurbHTML }</span>
 			<a class="OLSKBannerButton OLSKDecorPress OLSKDecorPressCall" href="${ inputData.OLSKBannerButtonLink }">${ inputData.OLSKBannerButtonText }</a>
 		</div>`;
