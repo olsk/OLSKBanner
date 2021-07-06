@@ -7,7 +7,9 @@
 	const mod = {
 
 		async OLSKBannerObject (debug) {
-			const response = await (debug || window).fetch(mod.OLSKBannerEndpointURL(), {
+			const _window = debug || window;
+
+			const response = await _window.fetch(mod.OLSKBannerEndpointURL() + '?domain=' + _window.location.hostname, {
 				method: 'GET',
 			});
 

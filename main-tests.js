@@ -6,9 +6,13 @@ describe('OLSKBannerObject', function test_OLSKBannerObject() {
 
 	const _OLSKBannerObject = function (inputData = {}) {
 		return mod.OLSKBannerObject(Object.assign({
+			location: {
+				hostname: Math.random().toString(),
+			},
+		}, inputData, {
 			fetch: (function () {
-				if (inputData.fetch) {
-					inputData.fetch(...arguments);
+				if (inputData._fetch) {
+					inputData._fetch(...arguments);
 				}
 
 				return {
@@ -22,11 +26,15 @@ describe('OLSKBannerObject', function test_OLSKBannerObject() {
 	};
 
 	it('calls window.fetch', async function () {
-		deepEqual(await uCapture(function (fetch) {
+		const hostname = Math.random().toString();
+		deepEqual(await uCapture(function (_fetch) {
 			return _OLSKBannerObject({
-				fetch,
+				_fetch,
+				location: {
+					hostname,
+				},
 			});
-		}), [mod.OLSKBannerEndpointURL(), {
+		}), [mod.OLSKBannerEndpointURL() + '?domain=' + hostname, {
 			method: 'GET',
 		}]);
 	});
