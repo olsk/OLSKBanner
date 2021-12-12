@@ -30,20 +30,20 @@ describe('OLSKBanner_Misc', function () {
 
 	describe('OLSKBannerButton', function() {
 
-		it('classes OLSKDecorPress', function () {
-			browser.assert.hasClass(OLSKBannerButton, 'OLSKDecorPress');
-		});
-
-		it('classes OLSKDecorPressCall', function () {
-			browser.assert.hasClass(OLSKBannerButton, 'OLSKDecorPressCall');
-		});
-
 		it('sets href', function () {
 			browser.assert.attribute(OLSKBannerButton, 'href', item.OLSKBannerButtonLink);
 		});
 
-		it('sets text', function () {
-			browser.assert.text(OLSKBannerButton, item.OLSKBannerButtonText);
+		it('sets title', function () {
+			browser.assert.attribute(OLSKBannerButton, 'title', 'Visit link');
+		});
+
+	});
+
+	describe('OLSKBannerButtonImage', function() {
+
+		it('sets src', function () {
+			browser.assert.attribute(OLSKBannerButtonImage, 'src', 'https://static.rosano.ca/_shared/_OLSKSharedGoIcon.svg');
 		});
 
 	});

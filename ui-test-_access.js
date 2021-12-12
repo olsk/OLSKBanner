@@ -4,6 +4,7 @@ Object.entries({
 	OLSKBanner: '.OLSKBanner',
 	OLSKBannerBlurb: '.OLSKBannerBlurb',
 	OLSKBannerButton: '.OLSKBannerButton',
+	OLSKBannerButtonImage: '.OLSKBannerButtonImage',
 }).map(function (e) {
 	return global[e.shift()]  = e.pop();
 });
@@ -24,6 +25,10 @@ describe('OLSKBanner_Access', function () {
 
 	it('shows OLSKBannerButton', function () {
 		browser.assert.elements(OLSKBannerButton, 1);
+	});
+
+	it('shows OLSKBannerButtonImage', function () {
+		browser.assert.elements(OLSKBannerButtonImage, 1);
 	});
 
 });
