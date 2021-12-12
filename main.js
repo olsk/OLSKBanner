@@ -54,8 +54,8 @@
 			const target = document.createElement('div');
 			document.body.appendChild(target);
 			target.innerHTML = `<div class="OLSKBanner OLSKDecor" lang="en">
-			<span class="OLSKBannerBlurb">${ inputData.OLSKBannerBlurbHTML }</span>
-			<a class="OLSKBannerButton" href="${ inputData.OLSKBannerButtonLink }" title="Visit link">&nbsp;<img class="OLSKBannerButtonImage" src="https://static.rosano.ca/_shared/_OLSKSharedGoIcon.svg" /></a>
+			<span class="OLSKBannerBlurb">${ inputData.OLSKBannerBlurbHTML }&nbsp;</span>
+			<a class="OLSKBannerButton" href="${ inputData.OLSKBannerButtonLink }" title="Visit link"><img class="OLSKBannerButtonImage" src="https://static.rosano.ca/_shared/_OLSKSharedGoIcon.svg" /></a>
 		</div>`;
 			document.body.style.paddingBottom = document.querySelector('.OLSKBanner').getBoundingClientRect().height + 'px'
 		},
