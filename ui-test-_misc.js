@@ -23,7 +23,7 @@ describe('OLSKBanner_Misc', function () {
 	describe('OLSKBannerBlurb', function() {
 
 		it('sets html', function () {
-			browser.assert.OLSKInnerHTML(OLSKBannerBlurb, item.OLSKBannerBlurbHTML);
+			browser.assert.OLSKInnerHTML(OLSKBannerBlurb, item.OLSKBannerBlurbHTML + '&nbsp;');
 		});
 
 	});
