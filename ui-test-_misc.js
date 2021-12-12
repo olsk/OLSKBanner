@@ -2,7 +2,11 @@ const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 
 describe('OLSKBanner_Misc', function () {
 
-	const item = uItem();
+	const OLSKBannerButtonText = Math.random().toString();
+
+	const item = uItem({
+		OLSKBannerBlurbHTML: OLSKBannerButtonText + `\n\n<style>.OLSKJar { display: none; } </style>`,
+	});
 
 	before(function() {
 		return browser.OLSKVisit(kDefaultRoute, item);
@@ -39,7 +43,7 @@ describe('OLSKBanner_Misc', function () {
 		});
 
 		it('sets title', function () {
-			browser.assert.attribute(OLSKBannerButton, 'title', 'Visit link');
+			browser.assert.attribute(OLSKBannerButton, 'title', OLSKBannerButtonText);
 		});
 
 	});

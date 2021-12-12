@@ -55,7 +55,7 @@
 			document.body.appendChild(target);
 			target.innerHTML = `<div class="OLSKBanner OLSKDecor" lang="en">
 			<span class="OLSKBannerBlurb" aria-hidden="true">${ inputData.OLSKBannerBlurbHTML }&nbsp;</span>
-			<a class="OLSKBannerButton" href="${ inputData.OLSKBannerButtonLink }" title="Visit link"><img class="OLSKBannerButtonImage" src="https://static.rosano.ca/_shared/_OLSKSharedGoIcon.svg" /></a>
+			<a class="OLSKBannerButton" href="${ inputData.OLSKBannerButtonLink }" title="${ inputData.OLSKBannerBlurbHTML.split('\n').shift() }"><img class="OLSKBannerButtonImage" src="https://static.rosano.ca/_shared/_OLSKSharedGoIcon.svg" /></a>
 		</div>`;
 			document.body.style.paddingBottom = document.querySelector('.OLSKBanner').getBoundingClientRect().height + 'px'
 		},
