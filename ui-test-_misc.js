@@ -22,6 +22,10 @@ describe('OLSKBanner_Misc', function () {
 
 	describe('OLSKBannerBlurb', function() {
 
+		it('sets aria-hidden', function () {
+			browser.assert.attribute(OLSKBannerBlurb, 'aria-hidden', 'true');
+		});
+
 		it('sets html', function () {
 			browser.assert.OLSKInnerHTML(OLSKBannerBlurb, item.OLSKBannerBlurbHTML + '&nbsp;');
 		});
