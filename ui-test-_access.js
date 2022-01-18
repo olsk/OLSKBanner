@@ -6,7 +6,7 @@ Object.entries({
 	OLSKBannerButton: '.OLSKBannerButton',
 	OLSKBannerButtonImage: '.OLSKBannerButtonImage',
 }).map(function (e) {
-	return global[e.shift()]  = e.pop();
+	return global[e.shift()] = e.pop();
 });
 
 describe('OLSKBanner_Access', function () {
