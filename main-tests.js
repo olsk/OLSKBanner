@@ -27,14 +27,16 @@ describe('OLSKBannerObject', function test_OLSKBannerObject() {
 
 	it('calls window.fetch', async function () {
 		const hostname = Math.random().toString();
+		const href = 'https://' + Math.random().toString();
 		deepEqual(await uCapture(function (_fetch) {
 			return _OLSKBannerObject({
 				_fetch,
 				location: {
 					hostname,
+					href,
 				},
 			});
-		}), [mod.OLSKBannerEndpointURL() + '?domain=' + hostname, {
+		}), [mod.OLSKBannerEndpointURL() + '?domain=' + hostname + '&link=' + encodeURIComponent(href) , {
 			method: 'GET',
 		}]);
 	});

@@ -9,7 +9,7 @@
 		async OLSKBannerObject (debug) {
 			const _window = debug || window;
 
-			const response = await _window.fetch(mod.OLSKBannerEndpointURL() + '?domain=' + _window.location.hostname, {
+			const response = await _window.fetch(mod.OLSKBannerEndpointURL() + '?domain=' + _window.location.hostname + '&link=' + encodeURIComponent(_window.location.href), {
 				method: 'GET',
 			});
 
