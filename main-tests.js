@@ -2,10 +2,10 @@ const { throws, deepEqual } = require('assert');
 
 const mod = require('./main.js');
 
-describe('OLSKBannerObject', function test_OLSKBannerObject() {
+describe('OLSKBannerInfoObject', function test_OLSKBannerInfoObject() {
 
-	const _OLSKBannerObject = function (inputData = {}) {
-		return mod.OLSKBannerObject(Object.assign({
+	const _OLSKBannerInfoObject = function (inputData = {}) {
+		return mod.OLSKBannerInfoObject(Object.assign({
 			location: {
 				hostname: Math.random().toString(),
 			},
@@ -29,7 +29,7 @@ describe('OLSKBannerObject', function test_OLSKBannerObject() {
 		const hostname = Math.random().toString();
 		const href = 'https://' + Math.random().toString();
 		deepEqual(await uCapture(function (_fetch) {
-			return _OLSKBannerObject({
+			return _OLSKBannerInfoObject({
 				_fetch,
 				location: {
 					hostname,
@@ -45,14 +45,14 @@ describe('OLSKBannerObject', function test_OLSKBannerObject() {
 		const json = uItem({
 			[Math.random().toString()]: Math.random().toString(),
 		});
-		deepEqual(await _OLSKBannerObject({
+		deepEqual(await _OLSKBannerInfoObject({
 			json,
 		}), json);
 	});
 
 	it('returns null if response.json not valid', async function () {
 		const json = {};
-		deepEqual(await _OLSKBannerObject({
+		deepEqual(await _OLSKBannerInfoObject({
 			json,
 		}), null);
 	});
@@ -115,7 +115,7 @@ describe('DOMContentLoaded', function test_DOMContentLoaded() {
 		const item = Math.random().toString();
 		deepEqual(await uCapture(function (OLSKBannerLoad) {
 			_DOMContentLoaded({
-				async OLSKBannerObject () {
+				async OLSKBannerInfoObject () {
 					return item;
 				},
 				OLSKBannerLoad,

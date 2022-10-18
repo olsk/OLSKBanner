@@ -6,7 +6,7 @@
 
 	const mod = {
 
-		async OLSKBannerObject (debug) {
+		async OLSKBannerInfoObject (debug) {
 			const _window = debug || window;
 
 			const response = await _window.fetch(mod.OLSKBannerEndpointURL() + '?domain=' + _window.location.hostname + '&link=' + encodeURIComponent(_window.location.href), {
@@ -71,7 +71,7 @@
 				return;
 			}
 
-			_mod.OLSKBannerLoad(await _mod.OLSKBannerObject());
+			_mod.OLSKBannerLoad(await _mod.OLSKBannerInfoObject());
 		},
 
 		// LIFECYCLE
