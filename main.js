@@ -35,7 +35,7 @@
 				return false;
 			}
 
-			if (typeof inputData.OLSKBannerButtonLink !== 'string') {
+			if (typeof inputData.OLSKBannerInfoURL !== 'string') {
 				return false;
 			}
 
@@ -50,7 +50,7 @@
 			const target = document.createElement('div');
 			document.body.appendChild(target);
 			target.innerHTML = `<div class="OLSKBanner OLSKDecor" lang="en">
-	<a class="OLSKBannerButton" href="${ inputData.OLSKBannerButtonLink }">
+	<a class="OLSKBannerButton" href="${ inputData.OLSKBannerInfoURL }">
 		<span class="OLSKBannerBlurb" aria-hidden="true">${ inputData.OLSKBannerInfoHTML }&nbsp;</span>
 		<img class="OLSKBannerButtonImage" src="https://static.rosano.ca/_shared/_OLSKSharedGoIcon.svg" />
 	</a>

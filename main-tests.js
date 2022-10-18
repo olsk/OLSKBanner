@@ -77,9 +77,9 @@ describe('OLSKBannerInfoIsValid', function test_OLSKBannerInfoIsValid () {
 		}), false);
 	});
 
-	it('returns false if OLSKBannerButtonLink not string', function () {
+	it('returns false if OLSKBannerInfoURL not string', function () {
 		deepEqual(_OLSKBannerInfoIsValid({
-			OLSKBannerButtonLink: null,
+			OLSKBannerInfoURL: null,
 		}), false);
 	});
 

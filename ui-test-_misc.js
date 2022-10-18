@@ -25,7 +25,7 @@ describe('OLSKBanner_Misc', function () {
 	describe('OLSKBannerButton', function() {
 
 		it('sets href', function () {
-			browser.assert.attribute(OLSKBannerButton, 'href', item.OLSKBannerButtonLink);
+			browser.assert.attribute(OLSKBannerButton, 'href', item.OLSKBannerInfoURL);
 		});
 
 	});
