@@ -2,9 +2,9 @@ const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 
 Object.entries({
 	OLSKBanner: '.OLSKBanner',
-	OLSKBannerButton: '.OLSKBannerButton',
+	OLSKBannerLink: '.OLSKBannerLink',
 	OLSKBannerBlurb: '.OLSKBannerBlurb',
-	OLSKBannerButtonImage: '.OLSKBannerButtonImage',
+	OLSKBannerLinkImage: '.OLSKBannerLinkImage',
 }).map(function (e) {
 	return global[e.shift()] = e.pop();
 });
@@ -19,16 +19,16 @@ describe('OLSKBanner_Access', function () {
 		browser.assert.elements(OLSKBanner, 1);
 	});
 
-	it('shows OLSKBannerButton', function () {
-		browser.assert.elements(OLSKBannerButton, 1);
+	it('shows OLSKBannerLink', function () {
+		browser.assert.elements(OLSKBannerLink, 1);
 	});
 
 	it('shows OLSKBannerBlurb', function () {
 		browser.assert.elements(OLSKBannerBlurb, 1);
 	});
 
-	it('shows OLSKBannerButtonImage', function () {
-		browser.assert.elements(OLSKBannerButtonImage, 1);
+	it('shows OLSKBannerLinkImage', function () {
+		browser.assert.elements(OLSKBannerLinkImage, 1);
 	});
 
 });

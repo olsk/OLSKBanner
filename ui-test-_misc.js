@@ -22,10 +22,10 @@ describe('OLSKBanner_Misc', function () {
 
 	});
 
-	describe('OLSKBannerButton', function() {
+	describe('OLSKBannerLink', function() {
 
 		it('sets href', function () {
-			browser.assert.attribute(OLSKBannerButton, 'href', item.OLSKBannerInfoURL);
+			browser.assert.attribute(OLSKBannerLink, 'href', item.OLSKBannerInfoURL);
 		});
 
 	});
@@ -42,10 +42,10 @@ describe('OLSKBanner_Misc', function () {
 
 	});
 
-	describe('OLSKBannerButtonImage', function() {
+	describe('OLSKBannerLinkImage', function() {
 
 		it('sets src', function () {
-			browser.assert.attribute(OLSKBannerButtonImage, 'src', 'https://static.rosano.ca/_shared/_OLSKSharedGoIcon.svg');
+			browser.assert.attribute(OLSKBannerLinkImage, 'src', 'https://static.rosano.ca/_shared/_OLSKSharedGoIcon.svg');
 		});
 
 	});

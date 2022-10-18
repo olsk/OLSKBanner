@@ -50,9 +50,9 @@
 			const target = document.createElement('div');
 			document.body.appendChild(target);
 			target.innerHTML = `<div class="OLSKBanner OLSKDecor" lang="en">
-	<a class="OLSKBannerButton" href="${ inputData.OLSKBannerInfoURL }">
+	<a class="OLSKBannerLink" href="${ inputData.OLSKBannerInfoURL }">
 		<span class="OLSKBannerBlurb" aria-hidden="true">${ inputData.OLSKBannerInfoHTML }&nbsp;</span>
-		<img class="OLSKBannerButtonImage" src="https://static.rosano.ca/_shared/_OLSKSharedGoIcon.svg" />
+		<img class="OLSKBannerLinkImage" src="https://static.rosano.ca/_shared/_OLSKSharedGoIcon.svg" />
 	</a>
 </div>`;
 			document.body.style.paddingBottom = document.querySelector('.OLSKBanner').getBoundingClientRect().height + 'px'
