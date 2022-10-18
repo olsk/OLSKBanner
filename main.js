@@ -35,10 +35,6 @@
 				return false;
 			}
 
-			if (typeof inputData.OLSKBannerButtonText !== 'string') {
-				// return false;
-			}
-
 			if (typeof inputData.OLSKBannerButtonLink !== 'string') {
 				return false;
 			}

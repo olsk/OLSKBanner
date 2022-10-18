@@ -77,12 +77,6 @@ describe('OLSKBannerInfoIsValid', function test_OLSKBannerInfoIsValid () {
 		}), false);
 	});
 
-	it.skip('returns false if OLSKBannerButtonText not string', function () {
-		deepEqual(_OLSKBannerInfoIsValid({
-			OLSKBannerButtonText: null,
-		}), false);
-	});
-
 	it('returns false if OLSKBannerButtonLink not string', function () {
 		deepEqual(_OLSKBannerInfoIsValid({
 			OLSKBannerButtonLink: null,

@@ -2,10 +2,8 @@ const kDefaultRoute = require('./controller.js').OLSKControllerRoutes().shift();
 
 describe('OLSKBanner_Misc', function () {
 
-	const OLSKBannerButtonText = Math.random().toString();
-
 	const item = uItem({
-		OLSKBannerInfoHTML: OLSKBannerButtonText,
+		OLSKBannerInfoHTML: Math.random().toString(),
 	});
 
 	before(function() {
