@@ -59,38 +59,38 @@ describe('OLSKBannerInfoObject', function test_OLSKBannerInfoObject() {
 
 });
 
-describe('OLSKBannerIsValid', function test_OLSKBannerIsValid () {
+describe('OLSKBannerInfoIsValid', function test_OLSKBannerInfoIsValid () {
 
-	const _OLSKBannerIsValid = function (inputData = {}) {
-		return mod.OLSKBannerIsValid(uItem(inputData));
+	const _OLSKBannerInfoIsValid = function (inputData = {}) {
+		return mod.OLSKBannerInfoIsValid(uItem(inputData));
 	};
 
 	it('throws if not object', function() {
 		throws(function() {
-			mod.OLSKBannerIsValid(null);
+			mod.OLSKBannerInfoIsValid(null);
 		}, /OLSKErrorInputNotValid/);
 	});
 
 	it('returns false if OLSKBannerBlurbHTML not string', function () {
-		deepEqual(_OLSKBannerIsValid({
+		deepEqual(_OLSKBannerInfoIsValid({
 			OLSKBannerBlurbHTML: null,
 		}), false);
 	});
 
 	it.skip('returns false if OLSKBannerButtonText not string', function () {
-		deepEqual(_OLSKBannerIsValid({
+		deepEqual(_OLSKBannerInfoIsValid({
 			OLSKBannerButtonText: null,
 		}), false);
 	});
 
 	it('returns false if OLSKBannerButtonLink not string', function () {
-		deepEqual(_OLSKBannerIsValid({
+		deepEqual(_OLSKBannerInfoIsValid({
 			OLSKBannerButtonLink: null,
 		}), false);
 	});
 
 	it('returns true', function () {
-		deepEqual(_OLSKBannerIsValid(), true);
+		deepEqual(_OLSKBannerInfoIsValid(), true);
 	});
 	
 });

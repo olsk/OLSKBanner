@@ -16,7 +16,7 @@
 			try {
 				const outputData = await response.json();
 				
-				if (mod.OLSKBannerIsValid(outputData)) {
+				if (mod.OLSKBannerInfoIsValid(outputData)) {
 					return outputData;
 				}
 
@@ -26,7 +26,7 @@
 			}
 		},
 
-		OLSKBannerIsValid (inputData) {
+		OLSKBannerInfoIsValid (inputData) {
 			if (typeof inputData !== 'object' || inputData === null) {
 				throw new Error('OLSKErrorInputNotValid');
 			}
