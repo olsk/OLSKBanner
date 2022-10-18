@@ -24,6 +24,14 @@ describe('OLSKBanner_Misc', function () {
 
 	});
 
+	describe('OLSKBannerButton', function() {
+
+		it('sets href', function () {
+			browser.assert.attribute(OLSKBannerButton, 'href', item.OLSKBannerButtonLink);
+		});
+
+	});
+
 	describe('OLSKBannerBlurb', function() {
 
 		it('sets aria-hidden', function () {
@@ -32,18 +40,6 @@ describe('OLSKBanner_Misc', function () {
 
 		it('sets html', function () {
 			browser.assert.OLSKInnerHTML(OLSKBannerBlurb, item.OLSKBannerBlurbHTML + '&nbsp;');
-		});
-
-	});
-
-	describe('OLSKBannerButton', function() {
-
-		it('sets href', function () {
-			browser.assert.attribute(OLSKBannerButton, 'href', item.OLSKBannerButtonLink);
-		});
-
-		it('sets title', function () {
-			browser.assert.attribute(OLSKBannerButton, 'title', OLSKBannerButtonText);
 		});
 
 	});
