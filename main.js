@@ -31,7 +31,7 @@
 				throw new Error('OLSKErrorInputNotValid');
 			}
 
-			if (typeof inputData.OLSKBannerBlurbHTML !== 'string') {
+			if (typeof inputData.OLSKBannerInfoHTML !== 'string') {
 				return false;
 			}
 
@@ -55,7 +55,7 @@
 			document.body.appendChild(target);
 			target.innerHTML = `<div class="OLSKBanner OLSKDecor" lang="en">
 	<a class="OLSKBannerButton" href="${ inputData.OLSKBannerButtonLink }">
-		<span class="OLSKBannerBlurb" aria-hidden="true">${ inputData.OLSKBannerBlurbHTML }&nbsp;</span>
+		<span class="OLSKBannerBlurb" aria-hidden="true">${ inputData.OLSKBannerInfoHTML }&nbsp;</span>
 		<img class="OLSKBannerButtonImage" src="https://static.rosano.ca/_shared/_OLSKSharedGoIcon.svg" />
 	</a>
 </div>`;

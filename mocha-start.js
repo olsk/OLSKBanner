@@ -2,7 +2,7 @@ const mod = {
 
 	uItem (inputData = {}) {
 		return Object.assign({
-			OLSKBannerBlurbHTML: '<b>' + Math.random().toString() + '</b>',
+			OLSKBannerInfoHTML: '<b>' + Math.random().toString() + '</b>',
 			OLSKBannerButtonText: Math.random().toString(),
 			OLSKBannerButtonLink: Math.random().toString(),
 		}, inputData);

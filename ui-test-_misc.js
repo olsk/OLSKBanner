@@ -5,7 +5,7 @@ describe('OLSKBanner_Misc', function () {
 	const OLSKBannerButtonText = Math.random().toString();
 
 	const item = uItem({
-		OLSKBannerBlurbHTML: OLSKBannerButtonText,
+		OLSKBannerInfoHTML: OLSKBannerButtonText,
 	});
 
 	before(function() {
@@ -39,7 +39,7 @@ describe('OLSKBanner_Misc', function () {
 		});
 
 		it('sets html', function () {
-			browser.assert.OLSKInnerHTML(OLSKBannerBlurb, item.OLSKBannerBlurbHTML + '&nbsp;');
+			browser.assert.OLSKInnerHTML(OLSKBannerBlurb, item.OLSKBannerInfoHTML + '&nbsp;');
 		});
 
 	});

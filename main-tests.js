@@ -71,9 +71,9 @@ describe('OLSKBannerInfoIsValid', function test_OLSKBannerInfoIsValid () {
 		}, /OLSKErrorInputNotValid/);
 	});
 
-	it('returns false if OLSKBannerBlurbHTML not string', function () {
+	it('returns false if OLSKBannerInfoHTML not string', function () {
 		deepEqual(_OLSKBannerInfoIsValid({
-			OLSKBannerBlurbHTML: null,
+			OLSKBannerInfoHTML: null,
 		}), false);
 	});
 
