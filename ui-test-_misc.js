@@ -5,7 +5,7 @@ describe('OLSKBanner_Misc', function () {
 	const OLSKBannerButtonText = Math.random().toString();
 
 	const item = uItem({
-		OLSKBannerBlurbHTML: OLSKBannerButtonText + `\n\n<style>.OLSKJar { display: none; } </style>`,
+		OLSKBannerBlurbHTML: OLSKBannerButtonText,
 	});
 
 	before(function() {
