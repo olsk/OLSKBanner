@@ -92,7 +92,7 @@ describe('OLSKBannerInfoIsValid', function test_OLSKBannerInfoIsValid () {
 describe('OLSKBannerEndpointURL', function test_OLSKBannerEndpointURL () {
 
 	it('returns string', function () {
-		deepEqual(mod.OLSKBannerEndpointURL(), 'https://api.rosano.ca/banner');
+		deepEqual(mod.OLSKBannerEndpointURL(), 'https://rosano.ca/api/banner');
 	});
 
 });

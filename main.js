@@ -43,7 +43,7 @@
 		},
 
 		OLSKBannerEndpointURL () {
-			return 'https://api.rosano.ca/banner';
+			return 'https://rosano.ca/api/banner';
 		},
 
 		OLSKBannerLoad (inputData) {
