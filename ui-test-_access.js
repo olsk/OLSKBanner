@@ -16,19 +16,19 @@ describe('OLSKBanner_Access', function () {
 	});
 
 	it('shows OLSKBanner', function () {
-		browser.assert.elements(OLSKBanner, 1);
+		return browser.assert.elements(OLSKBanner, 1);
 	});
 
 	it('shows OLSKBannerLink', function () {
-		browser.assert.elements(OLSKBannerLink, 1);
+		return browser.assert.elements(OLSKBannerLink, 1);
 	});
 
 	it('shows OLSKBannerBlurb', function () {
-		browser.assert.elements(OLSKBannerBlurb, 1);
+		return browser.assert.elements(OLSKBannerBlurb, 1);
 	});
 
 	it('shows OLSKBannerLinkImage', function () {
-		browser.assert.elements(OLSKBannerLinkImage, 1);
+		return browser.assert.elements(OLSKBannerLinkImage, 1);
 	});
 
 });

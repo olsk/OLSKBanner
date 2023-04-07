@@ -13,11 +13,11 @@ describe('OLSKBanner_Misc', function () {
 	describe('OLSKBanner', function() {
 
 		it('classes OLSKDecor', function () {
-			browser.assert.hasClass(OLSKBanner, 'OLSKDecor');
+			return browser.assert.hasClass(OLSKBanner, 'OLSKDecor');
 		});
 
 		it('sets lang', function () {
-			browser.assert.attribute(OLSKBanner, 'lang', 'en');
+			return browser.assert.attribute(OLSKBanner, 'lang', 'en');
 		});
 
 	});
@@ -25,7 +25,7 @@ describe('OLSKBanner_Misc', function () {
 	describe('OLSKBannerLink', function() {
 
 		it('sets href', function () {
-			browser.assert.attribute(OLSKBannerLink, 'href', item.OLSKBannerInfoURL);
+			return browser.assert.attribute(OLSKBannerLink, 'href', item.OLSKBannerInfoURL);
 		});
 
 	});
@@ -33,11 +33,11 @@ describe('OLSKBanner_Misc', function () {
 	describe('OLSKBannerBlurb', function() {
 
 		it('sets aria-hidden', function () {
-			browser.assert.attribute(OLSKBannerBlurb, 'aria-hidden', 'true');
+			return browser.assert.attribute(OLSKBannerBlurb, 'aria-hidden', 'true');
 		});
 
 		it('sets html', function () {
-			browser.assert.OLSKInnerHTML(OLSKBannerBlurb, item.OLSKBannerInfoHTML + '&nbsp;');
+			return browser.assert.OLSKInnerHTML(OLSKBannerBlurb, item.OLSKBannerInfoHTML + '&nbsp;');
 		});
 
 	});
@@ -45,7 +45,7 @@ describe('OLSKBanner_Misc', function () {
 	describe('OLSKBannerLinkImage', function() {
 
 		it('sets src', function () {
-			browser.assert.attribute(OLSKBannerLinkImage, 'src', 'https://static.rosano.ca/_shared/_OLSKSharedGoIcon.svg');
+			return browser.assert.attribute(OLSKBannerLinkImage, 'src', 'https://static.rosano.ca/_shared/_OLSKSharedGoIcon.svg');
 		});
 
 	});
