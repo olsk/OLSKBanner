@@ -46,16 +46,22 @@
 			return 'https://rosano.ca/api/banner';
 		},
 
-		_OLSKBannerLoad (inputData) {
-			const target = document.createElement('div');
-			document.body.appendChild(target);
-			target.innerHTML = `<div class="OLSKBanner OLSKDecor" lang="en">
-	<a class="OLSKBannerLink" href="${ inputData.OLSKBannerInfoURL }">
-		<span class="OLSKBannerBlurb" aria-hidden="true">${ inputData.OLSKBannerInfoHTML }&nbsp;</span>
+		_configureElement (el, info) {
+			el.innerHTML = `<div class="OLSKBanner OLSKDecor" lang="en">
+	<a class="OLSKBannerLink" href="${ info.OLSKBannerInfoURL }">
+		<span class="OLSKBannerBlurb" aria-hidden="true">${ info.OLSKBannerInfoHTML }&nbsp;</span>
 		<img class="OLSKBannerLinkImage" src="https://static.rosano.ca/_shared/_OLSKSharedGoIcon.svg" />
 	</a>
 </div>`;
-			document.body.style.paddingBottom = document.querySelector('.OLSKBanner').getBoundingClientRect().height + 'px'
+			document.body.style.paddingBottom = document.querySelector('.OLSKBanner').getBoundingClientRect().height + 'px';
+		},
+
+		_OLSKBannerLoad (inputData) {
+			const target = document.createElement('div');
+			
+			document.body.appendChild(target);
+
+			mod._configureElement(target, inputData);
 		},
 
 		OLSKBannerLoad: () => _mod.OLSKBannerInfoObject().then(_mod._OLSKBannerLoad),
