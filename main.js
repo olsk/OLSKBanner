@@ -53,7 +53,7 @@
 		<img class="OLSKBannerLinkImage" src="https://static.rosano.ca/_shared/_OLSKSharedGoIcon.svg" />
 	</a>
 </div>`;
-			document.body.style.paddingBottom = document.querySelector('.OLSKBanner').getBoundingClientRect().height + 'px';
+			el.style.paddingBottom = document.querySelector('.OLSKBanner').getBoundingClientRect().height + 'px';
 		},
 
 		_OLSKBannerLoad (inputData) {
