@@ -101,18 +101,18 @@ describe('DOMContentLoaded', function test_DOMContentLoaded() {
 
 	const _DOMContentLoaded = function (inputData = {}) {
 		return Object.assign(Object.assign({}, mod), {
-			OLSKBannerLoad: (function () {}),
+			_OLSKBannerLoad: (function () {}),
 		}, inputData).DOMContentLoaded();
 	};
 
-	it('calls OLSKBannerLoad', async function () {
+	it('calls _OLSKBannerLoad', async function () {
 		const item = Math.random().toString();
-		deepEqual(await uCapture(function (OLSKBannerLoad) {
+		deepEqual(await uCapture(function (_OLSKBannerLoad) {
 			_DOMContentLoaded({
 				async OLSKBannerInfoObject () {
 					return item;
 				},
-				OLSKBannerLoad,
+				_OLSKBannerLoad,
 			});
 		}), [item]);
 	});

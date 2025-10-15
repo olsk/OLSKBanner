@@ -46,7 +46,7 @@
 			return 'https://rosano.ca/api/banner';
 		},
 
-		OLSKBannerLoad (inputData) {
+		_OLSKBannerLoad (inputData) {
 			const target = document.createElement('div');
 			document.body.appendChild(target);
 			target.innerHTML = `<div class="OLSKBanner OLSKDecor" lang="en">
@@ -58,16 +58,22 @@
 			document.body.style.paddingBottom = document.querySelector('.OLSKBanner').getBoundingClientRect().height + 'px'
 		},
 
+		OLSKBannerLoad: () => _mod.OLSKBannerInfoObject().then(_mod._OLSKBannerLoad),
+
 		// MESSAGE
 
-		async DOMContentLoaded () {
+		DOMContentLoaded () {
 			const _mod = (typeof process !== 'undefined' && process.env.npm_lifecycle_script === 'olsk-spec') ? this : mod;
 
 			if (typeof window === 'object' && window.origin.match('loc.tests')) {
 				return;
 			}
 
-			_mod.OLSKBannerLoad(await _mod.OLSKBannerInfoObject());
+			if (document.querySelectorAll('script[data-banner-manual]')) {
+				return
+			}
+
+			return mod.OLSKBannerLoad();
 		},
 
 		// LIFECYCLE
