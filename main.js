@@ -112,7 +112,7 @@
 			mod._configureElement(target, inputData);
 		},
 
-		OLSKBannerLoad: () => _mod.OLSKBannerInfoObject().then(_mod._OLSKBannerLoad),
+		OLSKBannerLoad: () => mod.OLSKBannerInfoObject().then(mod._OLSKBannerLoad),
 
 		// MESSAGE
 
