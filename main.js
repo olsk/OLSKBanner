@@ -123,7 +123,7 @@
 				return;
 			}
 
-			if (document.querySelectorAll('script[data-banner-manual]')) {
+			if (document.querySelector('script[data-banner-manual]')) {
 				return
 			}
 
