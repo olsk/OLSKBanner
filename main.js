@@ -52,7 +52,55 @@
 		<span class="OLSKBannerBlurb" aria-hidden="true">${ info.OLSKBannerInfoHTML }&nbsp;</span>
 		<img class="OLSKBannerLinkImage" src="https://static.rosano.ca/_shared/_OLSKSharedGoIcon.svg" />
 	</a>
-</div>`;
+</div>
+
+<style>
+.OLSKBanner {
+  --OLSKBannerForeground: black !important;
+
+  padding: 8px;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  background: #f3f3f3;
+  border-top: 1px solid #ccc;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1;
+}
+
+.OLSKBanner * {
+  color: var(--OLSKBannerForeground) !important;
+}
+
+.OLSKBannerLink {
+  text-decoration: none;
+  font-weight: normal;
+  
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (max-width: 760px) {
+
+  .OLSKBanner {
+    padding: 4px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+}
+</style>
+`;
 			el.style.paddingBottom = document.querySelector('.OLSKBanner').getBoundingClientRect().height + 'px';
 		},
 
