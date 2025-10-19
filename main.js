@@ -68,6 +68,7 @@
   background: #f3f3f3;
   border-top: 1px solid #ccc;
   text-align: center;
+  font-family: 'Lucida Grande', sans-serif;
 
   display: flex;
   justify-content: center;
