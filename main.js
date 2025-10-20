@@ -69,6 +69,7 @@
   border-top: 1px solid #ccc;
   text-align: center;
   font-family: 'Lucida Grande', sans-serif;
+  font-size: 14px;
 
   display: flex;
   justify-content: center;
